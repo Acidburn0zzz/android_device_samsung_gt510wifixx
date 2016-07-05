@@ -46,7 +46,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 
 # Set up the product codename, build version & MOTD.
-PRODUCT_CODENAME := sedo
+PRODUCT_CODENAME := candidus
 
 PRODUCT_MOTD :="\n\n\n--------------------MESSAGE---------------------\nThank you for choosing Evervolv for your Samsung Galaxy A Tablet\nPlease visit us at \#evervolv on irc.freenode.net\nFollow @preludedrew for the latest Evervolv updates\nGet the latest rom at evervolv.com\n------------------------------------------------\n"
 
