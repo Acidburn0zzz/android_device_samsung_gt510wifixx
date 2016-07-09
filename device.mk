@@ -34,6 +34,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/gt510wifixx/audio/audio_effects.conf:system/etc/audio_effects.conf \
     device/samsung/gt510wifixx/audio/audio_policy.conf:system/etc/audio_policy.conf
 
+# Disable RIL
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.carrier=wifi-only \
+    ro.radio.noril=1
+
 # GPS
 PRODUCT_COPY_FILES += \
     device/samsung/gt510wifixx/configs/gps.conf:system/etc/gps.conf
