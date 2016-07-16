@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <mixer>
-    <!-- GT5 10 WIFI EUR OPEN (L OS)(with Maxim amp)================================================ -->
+    <!-- GT5 10 LTE EUR OPEN (L OS)(with Maxim amp)================================================ -->
     <!-- These are the initial mixer settings -->
     <!-- reset RX/TX Start -->
     <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="0" />
@@ -205,6 +205,11 @@
         <path name="deep-buffer-playback bt-sco" />
     </path>
 
+    <path name="deep-buffer-playback speaker-and-bt-sco">
+        <path name="deep-buffer-playback bt-sco" />
+        <path name="deep-buffer-playback speaker-amp" />
+    </path>
+
     <path name="deep-buffer-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia1" value="1" />
     </path>
@@ -242,6 +247,11 @@
 
     <path name="low-latency-playback bt-sco-wb">
         <path name="low-latency-playback bt-sco" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback speaker-amp" />
     </path>
 
     <path name="low-latency-playback afe-proxy">
@@ -764,6 +774,11 @@
 	<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
 
+	<path name="speaker-and-bt-sco">
+        <path name="spk" />
+        <ctl name="RX3 Digital Volume" value="84" />
+	</path>
+
     <path name="fm-speaker">
         <path name="spk" />
         <ctl name="RX3 Digital Volume" value="80" />
@@ -794,7 +809,7 @@
 
     <path name="rec-headset-mic">
         <path name="ear-mic" />
-        <ctl name="DEC1 Volume" value="82" />
+        <ctl name="DEC1 Volume" value="88" />
         <ctl name="ADC2 Volume" value="4" />
     </path>
 
@@ -1568,7 +1583,7 @@
     <path name="voip-main-mic-comm">
         <path name="main-mic" />
         <ctl name="DEC1 Volume" value="84" />
-        <ctl name="ADC1 Volume" value="4" />
+        <ctl name="ADC1 Volume" value="6" />
     </path>
 
     <path name="voip-sub-mic-comm">

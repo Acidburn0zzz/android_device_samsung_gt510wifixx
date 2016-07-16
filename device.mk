@@ -21,18 +21,19 @@ DEVICE_PACKAGE_OVERLAYS += device/samsung/gt510wifixx/overlay
 
 # Audio
 PRODUCT_COPY_FILES += \
+    device/samsung/gt510wifixx/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    device/samsung/gt510wifixx/audio/audio_policy.conf:system/etc/audio_policy.conf \
+	device/samsung/gt510wifixx/audio/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    device/samsung/gt510wifixx/audio/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/samsung/gt510wifixx/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
+    device/samsung/gt510wifixx/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
     device/samsung/gt510wifixx/audio/acdb/Bluetooth_cal.acdb:system/etc/Bluetooth_cal.acdb \
     device/samsung/gt510wifixx/audio/acdb/General_cal.acdb:system/etc/General_cal.acdb \
     device/samsung/gt510wifixx/audio/acdb/Global_cal.acdb:system/etc/Global_cal.acdb \
+    device/samsung/gt510wifixx/audio/acdb/Handset_cal.acdb:system/etc/Handset_cal.acdb \
     device/samsung/gt510wifixx/audio/acdb/Hdmi_cal.acdb:system/etc/Hdmi_cal.acdb \
     device/samsung/gt510wifixx/audio/acdb/Headset_cal.acdb:system/etc/Headset_cal.acdb \
-    device/samsung/gt510wifixx/audio/acdb/Speaker_cal.acdb:system/etc/Speaker_cal.acdb \
-    device/samsung/gt510wifixx/audio/mixer_paths.xml:system/etc/mixer_paths.xml
-
-# Audio
-PRODUCT_COPY_FILES += \
-    device/samsung/gt510wifixx/audio/audio_effects.conf:system/etc/audio_effects.conf \
-    device/samsung/gt510wifixx/audio/audio_policy.conf:system/etc/audio_policy.conf
+    device/samsung/gt510wifixx/audio/acdb/Speaker_cal.acdb:system/etc/Speaker_cal.acdb
 
 # Disable RIL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
