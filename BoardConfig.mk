@@ -34,6 +34,30 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3145728000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12138278912
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+	fstab.qcom \
+	init.carrier.rc \
+	init.class_main.sh \
+	init.ksm.sh \
+	init.mdm.sh \
+	init.qcom.audio.sh \
+	init.qcom.bt.sh \
+	init.qcom.uicc.sh \
+	init.qcom.wifi.sh \
+	init.qcom.post_boot.sh \
+	init.qcom.class_core.sh \
+	init.qcom.early_boot.sh \
+	init.qcom.syspart_fixup.sh \
+	init.qcom.usb.rc \
+	init.qcom.usb.sh \
+	init.qcom.rc \
+	init.qcom.fm.sh \
+	init.qcom.sh \
+	ueventd.qcom.rc
+
+TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
+
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gt510wifi,gt510wifixx,SM-T350,gt510lte,gt510ltexx,SM-T550
 
