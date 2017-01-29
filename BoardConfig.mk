@@ -20,14 +20,28 @@
 # definition file).
 #
 
-# Inherit from common
--include device/samsung/gt5-common/BoardConfigCommon.mk
+# inherit from msm8916-common
+-include device/samsung/msm8916-common/BoardConfigCommon.mk
 
-# Inherit from the proprietary version
--include vendor/samsung/gt510wifixx/BoardConfigVendor.mk
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/gt510wifixx/bluetooth
+
+# Partition sizes
+TARGET_USERIMAGES_USE_EXT4 := true
+BOARD_BOOTIMAGE_PARTITION_SIZE := 13631488
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 15728640
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3145728000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12138278912
+BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gt510wifi,gt510wifixx,SM-T350,gt510lte,gt510ltexx,SM-T550
 
 # Kernel
 TARGET_KERNEL_CONFIG := gt510wifi_defconfig
+
+# Misc.
+TARGET_SYSTEM_PROP := device/samsung/gt510wifixx/system.prop
+
+# Inherit from the proprietary version
+-include vendor/samsung/gt510wifixx/BoardConfigVendor.mk

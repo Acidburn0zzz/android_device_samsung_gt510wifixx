@@ -13,25 +13,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Call this first so apn list is actually copied
-$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/apns.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Product makefile
-$(call inherit-product, device/samsung/gt510wifixx/full_gt510wifixx.mk)
+# Inherit from gt510wifixx device
+$(call inherit-product, device/samsung/gt510wifixx/device.mk)
 
-# Inherit some common evervolv stuff.
-$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/common_full_tablet_wifionly.mk)
-
-# Pull all dictionaries
-$(call inherit-product, $(SRC_EVERVOLV_DIR)/config/dictionaries/intl.mk)
-
-# Boot animation
-BOOT_ANIMATION_SIZE := xga
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := ev_gt510wifixx
+PRODUCT_NAME := lineage_gt510wifixx
 PRODUCT_DEVICE := gt510wifixx
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
@@ -43,6 +37,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
   PRODUCT_NAME=gt510wifixx \
   BUILD_FINGERPRINT=samsung/gt510wifixx/gt510wifi:6.0.1/MMB29M/T550XXU1BPE1:user/release-keys \
   PRIVATE_BUILD_DESC="gt510wifixx-user 6.0.1 MMB29M T550XXU1BPE1 release-keys"
-
-# Set up the product codename
-PRODUCT_CODENAME := candidus
